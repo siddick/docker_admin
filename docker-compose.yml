@@ -1,0 +1,3 @@
+build:
+  build: .
+  command: bundle exec unicorn -p $PORT
