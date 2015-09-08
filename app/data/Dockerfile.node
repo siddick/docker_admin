@@ -1,0 +1,17 @@
+FROM node:0.10
+
+RUN mkdir /app && \
+    bash -c 'echo "registry=http://npm.paypal.com" >> ~/.npmrc' && \
+    npm install -g grunt bower foreman
+
+WORKDIR /app
+
+COPY package.json /app/
+RUN npm install
+
+COPY . /app
+
+ENV PORT=3000
+EXPOSE 5000
+CMD ["nf", "start"]
+

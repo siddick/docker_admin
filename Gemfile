@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'mongoid'
 gem 'devise'
 gem 'omniauth-github'
+gem 'resque', :git => 'https://github.com/resque/resque.git'
 gem 'unicorn'
 
 group :development, :test do
