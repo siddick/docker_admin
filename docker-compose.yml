@@ -1,3 +1,11 @@
-build:
+web:
   build: .
-  command: bundle exec unicorn -p $PORT
+  dockerfile: app/data/Dockerfile.ruby
+  command: foreman start
+  links:
+    - 'redis:redis'
+    - 'mongo:mongodb'
+redis:
+  image: 'redis:latest'
+mongo:
+  image: 'mongo:latest'
